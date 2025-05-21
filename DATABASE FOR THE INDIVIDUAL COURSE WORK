@@ -1,29 +1,27 @@
-
 Create database MyCoursework;
 show databases;
 use mycoursework;
 create table Guest(Guest_Id Int(10) primary key auto_increment,Name char (20),
 Email char(50),Phone int(15),Afiliation char(15),Title char(10) );
 desc guest;
-create table Session(Session_Id Int(10) primary key auto_increment,Date date,
-Time time,Type char(15),Exhibition_Title char(10) );
-desc session;
-create table Seat(Seat_Id Int(10) primary key auto_increment,Section char (20),
-Price Int(50),Phone int(15),Availability boolean);
 
 create table Seat(Seat_Id char(100) primary key,Section char (20),
 Price Int(50),Availability boolean);
 Desc seat;
+
+Insert into seat values( "A1-A30. B1-B30. C1-C30 . D1-D30 . E1-E30. F1-F30","Front Section",150000,true),
+("G1-G30. H1-H30. I1-I30 . J1-J30 . K1-K30. L1-L30","Middle Section",75000,true),
+( "AA1-30. BB1-30. CC1-30 . DD1-28 . EE1-24. FF1-24","Balcony Section",35000,true),
+( "X1-16","VIP BOX ",350000,true);
+
+create table Session(Session_Id Int(10) primary key auto_increment,Date date,
+Time time,Type char(15),Exhibition_Title char(10) );
+
+desc session;
+
 create table Reservation(Reservation_Id Int(10) primary key,Guest_id int(20),
 session_id int(10),Seat_id int(10),Reservation_Time datetime,Payment_Status char(10),Amount_Paid int(10) );
 desc Reservation;
-select*from seat;
-Insert into seat values( "A1-A30. B1-B30. C1-C30 . D1-D30 . E1-E30. F1-F30","Front Section",150000,"1"),
-("G1-G30. H1-H30. I1-I30 . J1-J30 . K1-K30. L1-L30","Middle Section",75000,"1"),
-( "AA1-30. BB1-30. CC1-30 . DD1-28 . EE1-24. FF1-24","Balcony Section",35000,"1"),
-( "X1-16","VIP BOX ",350000,"1");
 
-select*from Reservation;
-select*from session;
-select*from guest;
+
 select*from seat;
