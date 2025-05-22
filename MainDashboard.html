@@ -19,34 +19,35 @@
     <a href="#Reports Module">Reports Module</a>
   </nav>
 
-  <main>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Victoria University Exhibition Reservation Form</title>
+<title >Victoria University Exhibition Reservation Form</title>
 <style>
   body {
-    background-color: #fffacd; /* Light yellow */
-    font-family: Arial, sans-serif;
+    background-color: DEFAULT;
+    font-family: Tahoma;
+    color:black;
     padding: 20px;
   }
   .form-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 15px 30px;
-    background-color: #fffacd;
+    background-color:cornflowerblue;
     border: 1px solid #ddd;
   }
   .logo {
-    width: 70px;
-    display: block;
+    width: 50px; height: 50px;
+    display: flex;
     margin-bottom: 10px;
   }
   h1 {
     text-align: center;
     font-weight: bold;
+    color: aliceblue;
     margin-bottom: 20px;
   }
   form label {
@@ -75,11 +76,11 @@
     background-color: transparent;
     padding: 5px;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
   }
   .half {
     flex: 1;
-  }
+  }s
   .small {
     width: 100px;
   }
@@ -97,7 +98,7 @@
   .total-row label {
     font-weight: bold;
   }
-  /* Align zip next to state */
+  
   .zip-input {
     width: 80px;
   }
@@ -105,7 +106,7 @@
 </head>
 <body>
   <div class="form-container">
-    <img src="VU-LOGO.jpg" alt="VU Logo" class="logo" />
+    <img src="VU-LOGO.jpg" alt="Victoria University Logo" class="VU-logo" />
     <h1>Victoria University Exhibition Reservation Form</h1>
     <form>
       <div class="row">
@@ -153,10 +154,13 @@
       <div class="total-row">
         <label for="total">Total to be Collected</label>
         <input type="text" id="total" name="total" />
-        <button type="submit">Reserve Ticket</button>
       </div>
+      <p style="color: white;font-family: Franklin Gothic Medium;">Victoria University: The University of Modern Technology and Artificial Intelligence</p>
     </form>
   </div>
+</body>
+
+
 
 
 
@@ -190,7 +194,7 @@
       <form id="booking-form">
         <input type="text" placeholder="Guest Email" required><br>
         <input type="text" placeholder="Select Session ID" required><br>
-        <input type="text" placeholder="Preferred Seat (e.g. A3)" required><br>
+        <input type="text" placeholder="Choose Seat Number" required><br>
         <button type="submit">Book Seat</button>
       </form>
     </section>
@@ -289,14 +293,14 @@
 
 
 <div class="container">
-  <!-- Guest Info & Reservation Form -->
+  
   <div class="form-section">
     <h2>Guest Information</h2>
     <form id="reservationForm">
       <label for="guestName">Full Name:</label>
       <input type="text" id="guestName" required />
 
-      <label for="affiliation">Affiliation (organization/institution):</label>
+      <label for="affiliation">Affiliation :</label>
       <input type="text" id="affiliation" />
 
       <label for="email">Email Address:</label>
@@ -481,31 +485,16 @@ form.addEventListener('submit', (e) => {
   document.getElementById('selectedSeatDisplay').textContent = 'None';
   document.getElementById('bookButton').disabled = true;
 
-  // Refresh seating map to mark seat taken
+ 
   createSeats(selectedSession);
 });
 
-// Initialize UI
+
 populateEventSessions();
 
 </script>
 
-    <!-- 4. Ticket Generation -->
-    <section class="dashboard-section" id="ticket-generation">
-      <h2>Ticket Generation (QR Code)</h2>
-      <input type="text" id="qr-data" placeholder="Enter Booking ID or Guest Email">
-      <button onclick="generateQR()">Generate QR</button>
-      <div id="ticket-qr"></div>
-    </section>
-
-    <!-- 5. Check-In System -->
-    <section class="dashboard-section" id="check-in">
-      <h2>Check-In System</h2>
-      <video id="qr-video"></video>
-      <input type="text" placeholder="Manual Booking ID Entry" id="manual-checkin">
-      <button onclick="manualCheckIn()">Check In</button>
-    </section>
-
+   
   <title>Theatre Seating</title>
   <style>
     body {
@@ -641,19 +630,19 @@ populateEventSessions();
     </div>
 
     <div>
-      <!-- First Section -->
+     
       <div class="section first">
         <div class="section-title">FIRST SECTION</div>
         <div id="first-section"></div>
       </div>
 
-      <!-- Middle Section -->
+ 
       <div class="section middle">
         <div class="section-title">MIDDLE SECTION</div>
         <div id="middle-section"></div>
       </div>
 
-      <!-- Balcony Section -->
+      
       <div class="section balcony">
         <div class="section-title">BALCONY SECTION</div>
         <div id="balcony-section"></div>
@@ -668,13 +657,13 @@ populateEventSessions();
         const row = document.createElement('div');
         row.className = 'seating-row';
 
-        // Left Label
+       
         const leftLabel = document.createElement('div');
         leftLabel.className = 'row-label';
         leftLabel.textContent = label;
         row.appendChild(leftLabel);
 
-        // Seats
+      
         for (let i = 0; i < cols; i++) {
           const seat = document.createElement('div');
           seat.className = 'seat';
@@ -759,13 +748,17 @@ populateEventSessions();
       alert("PDF export simulated.");
     }
   </script>
-  <script src="main.js"></script>
+  <script src="main.js">
+    </script>
+
+ 
 
 
   <footer style="display: flex; justify-content: flex-end; align-items: center; padding: 10px; background-color: #f8f9fa; border-bottom: 1px solid #ddd;">
     <button id="logout-btn" class="logout-button">Logout</button>
   </footer>
   
+
 
 </body>
 </html>
